@@ -1,0 +1,127 @@
+.login-container {
+  max-width: 400px;
+  width: 90%;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.login-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3498db;
+}
+
+.login-button,
+.signup-button,
+.forgot-password-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.login-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.login-button:hover {
+  background-color: #2980b9;
+}
+
+.signup-button {
+  background-color: #ecf0f1;
+  color: #34495e;
+}
+
+.signup-button:hover {
+  background-color: #bdc3c7;
+}
+
+.forgot-password-button {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.forgot-password-button:hover {
+  background-color: #7f8c8d;
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+      width: 95%;
+      padding: 20px;
+  }
+
+  .login-title {
+      font-size: 20px;
+  }
+
+  .form-input {
+      font-size: 14px;
+  }
+
+  .login-button,
+  .signup-button,
+  .forgot-password-button {
+      font-size: 16px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-container {
+      width: 80%;
+  }
+}
+
+@media (min-width: 769px) {
+  .login-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}

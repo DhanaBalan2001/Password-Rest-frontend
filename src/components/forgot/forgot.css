@@ -1,0 +1,105 @@
+.forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+  }
+  
+  .forgot-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .forgot-title {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .forgot-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  }
+  
+  .forgot-button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+  }
+  
+  .forgot-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .forgot-button:active {
+    transform: scale(0.98);
+  }
+  
+  .forgot-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+  
+  .message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: #e8f6fd;
+    color: #3498db;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 480px) {
+    .forgot-card {
+      padding: 2rem;
+    }
+  
+    .forgot-title {
+      font-size: 24px;
+    }
+  
+    .form-group input,
+    .forgot-button {
+      font-size: 14px;
+    }
+  }
+  
