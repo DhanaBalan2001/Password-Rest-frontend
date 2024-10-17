@@ -38,7 +38,7 @@ const ResetPassword = () => {
     }
     setIsLoading(true);
     try {
-      const response = await axios.post(`http://localhost:5000/api/auth/reset-password/${resetIdentifier}`, { password });
+      const response = await axios.post(`https://password-reset-backend-70n2.onrender.com/api/auth/reset-password/${resetIdentifier}`, { password });
       setMessage(response.data.message);
       setTimeout(() => navigate('/login'), 3000);
     } catch (error) {
