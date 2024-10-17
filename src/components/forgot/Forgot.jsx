@@ -11,7 +11,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await axios.post('https://password-reset-backend-uszv.onrender.com/api/auth/forgot-password', { email });
+      const response = await axios.post('https://password-reset-backend-70n2.onrender.com/api/auth/forgot-password', { email });
       setMessage(response.data.message);
     } catch (error) {
       setMessage('');
