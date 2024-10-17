@@ -17,7 +17,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await axios.post('https://password-reset-backend-uszv.onrender.com/api/auth/register', { email, password });
+      const response = await axios.post('https://password-reset-backend-70n2.onrender.com/api/auth/register', { email, password });
       setMessage(response.data.message);
       // Navigate to login page after successful registration
       navigate('/login');
