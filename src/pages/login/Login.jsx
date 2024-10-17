@@ -12,7 +12,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       const response = await axios.post('https://password-reset-backend-70n2.onrender.com/api/auth/login', { email, password });
+=======
+      const response = await axios.post('https://password-reset-backend-uszv.onrender.com/api/auth/login', { email, password });
+>>>>>>> bc8b7c8136d1276a845030cda4f0862613bbf1c4
       setMessage(response.data.message);
       // Handle successful login (e.g., store token, redirect)
     } catch (error) {
