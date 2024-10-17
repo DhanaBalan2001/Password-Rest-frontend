@@ -38,11 +38,7 @@ const ResetPassword = () => {
     }
     setIsLoading(true);
     try {
-<<<<<<< HEAD
       const response = await axios.post(`http://localhost:5000/api/auth/reset-password/${resetIdentifier}`, { password });
-=======
-      const response = await axios.post(`https://password-reset-backend-uszv.onrender.com/api/auth/reset-password/${token}`, { password });
->>>>>>> bc8b7c8136d1276a845030cda4f0862613bbf1c4
       setMessage(response.data.message);
       setTimeout(() => navigate('/login'), 3000);
     } catch (error) {
