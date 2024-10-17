@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './reset.css';
@@ -8,8 +8,27 @@ const ResetPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { token } = useParams();
+  const [isValidToken, setIsValidToken] = useState(false);
+  const { resetIdentifier } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const validateToken = async () => {
+      try {
+        const response = await axios.get(`https://password-reset-backend-70n2.onrender.com/api/auth/reset-password/${resetIdentifier}`);
+        if (response.data.message === 'Token is valid') {
+          setIsValidToken(true);
+        } else {
+          setIsValidToken(false);
+          setMessage('Invalid or expired reset link');
+        }
+      } catch (error) {
+        setIsValidToken(false);
+        setMessage('Invalid or expired reset link');
+      }
+    };
+    validateToken();
+  }, [resetIdentifier]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +38,7 @@ const ResetPassword = () => {
     }
     setIsLoading(true);
     try {
-      const response = await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, { password });
+      const response = await axios.post(`http://localhost:5000/api/auth/reset-password/${resetIdentifier}`, { password });
       setMessage(response.data.message);
       setTimeout(() => navigate('/login'), 3000);
     } catch (error) {
@@ -27,6 +46,10 @@ const ResetPassword = () => {
     }
     setIsLoading(false);
   };
+
+  if (!isValidToken) {
+    return <div className="reset-container"><div className="message">{message}</div></div>;
+  }
 
   return (
     <div className="reset-container">
